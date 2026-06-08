@@ -1,4 +1,4 @@
-# VS 2026 x64 version
+# VS 2022/2026 x64 version
 
 [Available here](https://github.com/nemanja228/ColinsALMCornerCheckinPolicies/releases/download/vs2022/ColinsALMCheckinPoliciesInstaller.vsix)
 
