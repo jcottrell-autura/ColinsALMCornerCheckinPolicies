@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,7 +9,7 @@ using System.Windows.Forms;
 namespace ColinsALMCheckinPolicies
 {
 	[Serializable]
-	public sealed class OneWorkItemPolicy : PolicyBase
+	public sealed class OneWorkItemPolicy : CheckinPolicyBase
 	{
 		[NonSerialized]
 		private IPendingCheckin pendingCheckin;
@@ -67,13 +66,6 @@ namespace ColinsALMCheckinPolicies
 		public override string GetAssemblyName()
 		{
 			return OneWorkItemPolicySerializationBinding.PolicyAsmName;
-		}
-
-		public override BinaryFormatter GetBinaryFormatter()
-		{
-			BinaryFormatter formatter = new BinaryFormatter();
-			formatter.Binder = new OneWorkItemPolicySerializationBinding();
-			return formatter;
 		}
 		#endregion
 

@@ -4,13 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
 namespace ColinsALMCheckinPolicies
 {
 	[Serializable]
-    public sealed class CodeReviewPolicy : PolicyBase
+    public sealed class CodeReviewPolicy : CheckinPolicyBase
     {
 		public const string ClosedStatus = "Microsoft.VSTS.CodeReview.ClosedStatus";
 
@@ -70,13 +69,6 @@ namespace ColinsALMCheckinPolicies
 		{
 			return CodeReviewPolicySerializationBinding.PolicyAsmName;
 		}
-
-		public override BinaryFormatter GetBinaryFormatter()
-		{
-			BinaryFormatter formatter = new BinaryFormatter();
-			formatter.Binder = new CodeReviewPolicySerializationBinding();
-			return formatter;
-		} 
 		#endregion
 
 		public override bool Edit(IPolicyEditArgs policyEditArgs)

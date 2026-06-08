@@ -1,5 +1,5 @@
 ﻿using Microsoft.TeamFoundation.VersionControl.Client;
-using Microsoft.TeamFoundation.VersionControl.Controls.Common;
+using Microsoft.TeamFoundation.VersionControl.Controls;
 using System;
 using System.Linq;
 using System.Windows.Forms;
