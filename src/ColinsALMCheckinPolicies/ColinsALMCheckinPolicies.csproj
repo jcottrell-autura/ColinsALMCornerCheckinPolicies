@@ -10,6 +10,7 @@
     <RootNamespace>ColinsALMCheckinPolicies</RootNamespace>
     <AssemblyName>ColinsALMCheckinPolicies</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>9.0</LangVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -94,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseSerializationBinding.cs" />
+    <Compile Include="TfsAssemblyResolver.cs" />
     <Compile Include="CodeReview\CodeReviewPolicy.cs" />
     <Compile Include="CodeReview\CodeReviewPolicyConfig.cs" />
     <Compile Include="CodeReview\CodeReviewPolicyForm.cs">
