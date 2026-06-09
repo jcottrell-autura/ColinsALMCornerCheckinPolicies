@@ -10,7 +10,7 @@ namespace ColinsALMCheckinPolicies
 {
 	internal sealed class CodeReviewPolicySerializationBinding : BaseSerializationBinding
 	{
-		internal const string PolicyAsmName = "ColinsALMCheckinPolicies.CodeReviewPolicy, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
+		internal const string PolicyAsmName = "ColinsALMCheckinPolicies";
 
 		public override string AsmName
 		{
