@@ -1,6 +1,6 @@
 # VS 2022/2026 x64 version
 
-[Available here](https://github.com/nemanja228/ColinsALMCornerCheckinPolicies/releases/download/vs2022/ColinsALMCheckinPoliciesInstaller.vsix)
+[Available here](https://github.com/jcottrell-autura/ColinsALMCornerCheckinPolicies/releases/download/vs2026/ColinsALMCheckinPoliciesInstaller.vsix)
 
 # Colins ALM CornerCheckin Policies
 

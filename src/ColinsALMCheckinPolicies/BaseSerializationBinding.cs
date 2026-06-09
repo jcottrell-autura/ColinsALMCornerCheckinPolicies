@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System;
 using System.Reflection;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json.Serialization;
 
 namespace ColinsALMCheckinPolicies
 {
-	internal abstract class BaseSerializationBinding : SerializationBinder
+	internal abstract class BaseSerializationBinding : ISerializationBinder
 	{
 		public virtual string AsmName
 		{
@@ -18,7 +14,7 @@ namespace ColinsALMCheckinPolicies
 			}
 		}
 
-		public override void BindToName(Type serializedType, out string assemblyName, out string typeName)
+		public void BindToName(Type serializedType, out string assemblyName, out string typeName)
 		{
 			var assembly = serializedType.Assembly;
 			if (assembly.Equals(Assembly.GetExecutingAssembly()))
@@ -32,9 +28,13 @@ namespace ColinsALMCheckinPolicies
 			typeName = serializedType.FullName;
 		}
 
-		public override Type BindToType(string assemblyName, string typeName)
+		public Type BindToType(string assemblyName, string typeName)
 		{
-			throw new NotImplementedException();
+			// VS loads this extension outside the default assembly probing path, so
+			// resolve the policy type from this assembly rather than relying on the
+			// assembly name encoded in the stored $type value (Assembly.Load by simple
+			// name fails for an extension-hosted assembly).
+			return Assembly.GetExecutingAssembly().GetType(typeName) ?? Type.GetType(typeName);
 		}
 	}
 }

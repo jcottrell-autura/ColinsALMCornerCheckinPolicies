@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace ColinsALMCheckinPolicies
 {
@@ -68,6 +69,15 @@ namespace ColinsALMCheckinPolicies
 		public override string GetAssemblyName()
 		{
 			return CodeReviewPolicySerializationBinding.PolicyAsmName;
+		}
+
+		public override JsonSerializerSettings GetJsonSerializerSettings()
+		{
+			return new JsonSerializerSettings()
+			{
+				SerializationBinder = new CodeReviewPolicySerializationBinding(),
+				TypeNameHandling = TypeNameHandling.Objects
+			};
 		}
 		#endregion
 
