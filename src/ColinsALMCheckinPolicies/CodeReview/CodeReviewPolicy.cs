@@ -17,6 +17,7 @@ namespace ColinsALMCheckinPolicies
 		[NonSerialized]
 		private IPendingCheckin pendingCheckin;
 
+		[JsonProperty(TypeNameHandling = TypeNameHandling.None)]
 		public CodeReviewPolicyConfig Config { get; set; }
 
 		#region base properties

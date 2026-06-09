@@ -15,6 +15,7 @@ namespace ColinsALMCheckinPolicies
 		[NonSerialized]
 		private IPendingCheckin pendingCheckin;
 
+		[JsonProperty(TypeNameHandling = TypeNameHandling.None)]
 		public OneWorkItemPolicyConfig Config { get; set; }
 
 		#region base properties
